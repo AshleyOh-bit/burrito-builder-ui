@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 10px;
+}
+
+.ingButton {
+  margin: 5px;
+  background-color: lightseagreen;
+  border: 0;
+  border-radius: 4px;
+}
