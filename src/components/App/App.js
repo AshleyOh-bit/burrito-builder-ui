@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   addOrder = async newOrder => {
-    //this.setState({ orders: [...this.state.orders, newOrder] })
     await fetch('http://localhost:3001/api/v1/orders', {
       method: "POST",
       body: JSON.stringify(newOrder),
@@ -28,7 +27,6 @@ class App extends Component {
     })
     .then(response => response.json)
     .then(this.setState({ orders: [...this.state.orders, newOrder] }))
-    // .then(data => this.setState({ orders: [...this.state.orders, data] }))
     .catch(err => this.setState({error: err.message}))
   }
 

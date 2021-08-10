@@ -39,4 +39,25 @@ describe('App user flows', () => {
       .should("be.visible")
   })
 
+  it("Should display an input for the user to type their name", () => {
+    cy.get("input")
+      .should("be.visible")
+      .should("have.attr", "placeholder")
+  })
+
+  it("Should display buttons for each ingredient and to submit" , () => {
+    cy.get("[data-cy=ingButton]")
+      .should("have.length", "12")
+  })
+
+  it("Should display a disabled submit button on page load", () => {
+    cy.get("[data-cy=submit]")
+      .should("be.disabled")
+  })
+
+  it("Should review the order back to the user", () => {
+    cy.get("p")
+      .contains("Order: Nothing selected")
+  })
+
 })

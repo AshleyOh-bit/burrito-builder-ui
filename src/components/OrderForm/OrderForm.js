@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class OrderForm extends Component {
   constructor(props) {
     super(props);
-    // this.props = props;
     this.state = {
       name: '',
       ingredients: [],
@@ -53,7 +52,7 @@ class OrderForm extends Component {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
     const ingredientButtons = possibleIngredients.map(ingredient => {
       return (
-        <button key={ingredient} name={ingredient} onClick={e => this.handleIngredientChange(e)}>
+        <button key={ingredient} name={ingredient} data-cy="ingButton" onClick={e => this.handleIngredientChange(e)}>
           {ingredient}
         </button>
       )
@@ -75,6 +74,7 @@ class OrderForm extends Component {
 
         <button 
           disabled={this.state.isReady} 
+          data-cy="submit"
           onClick={e => this.handleSubmit(e)}
         >
           Submit Order
