@@ -8,7 +8,7 @@ const Orders = props => {
         <h3 data-cy="orderName">{order.name}</h3>
         <ul className="ingredient-list">
           {order.ingredients.map((ingredient, index) => {
-            return <li key={index} data-cy="ingredients" id={index}>{ingredient}</li>
+            return <li key={index} data-cy="ingredients">{ingredient}</li>
           })}
         </ul>
       </div>

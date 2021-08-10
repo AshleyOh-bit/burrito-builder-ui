@@ -62,6 +62,37 @@ describe('App user flows', () => {
       .should("be.disabled")
   })
 
+  it("Should display a disabled submit button if there is a user name but no ingredients", () => {
+    cy.get("input")
+      .type("Brandon")
+    cy.get("[data-cy=submit]")
+      .should("be.disabled")
+  })
 
+  it("Should be display an enabled button if there is a user name and ingredients", () => {
+    cy.get("input")
+      .type("Brandon")
+    cy.get("#0")
+      .click()
+    cy.get("[data-cy=submit]")
+      .should("be.enabled")
+  })
+  
+  it("Should be display an order card upon submission", () => {
+    cy.get("input")
+      .type("Brandon")
+    cy.get("#0")
+      .click()
+    cy.get("#1")
+      .click()
+    cy.get("#2")
+      .click()
+    cy.get("[data-cy=submit]")
+      .click()
+    cy.get("[data-cy=orderCard]")
+      .should("have.length", "2")
+  })
+
+  //should clear inputs after submitting
   
 })
