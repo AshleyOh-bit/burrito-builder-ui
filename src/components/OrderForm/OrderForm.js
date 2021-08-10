@@ -61,7 +61,6 @@ class OrderForm extends Component {
 
     return (
       <form>
-        <h3 className="form-header">Customize your burrito!</h3>
         <input
           type='text'
           placeholder='Name'
@@ -69,6 +68,7 @@ class OrderForm extends Component {
           value={this.state.name}
           onChange={e => this.handleNameChange(e)}
         />
+        <h3 className="form-header">Customize your burrito!</h3>
         <section className="buttons-section">
         { ingredientButtons }
         </section>
