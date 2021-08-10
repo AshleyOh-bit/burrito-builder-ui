@@ -6,7 +6,8 @@ class OrderForm extends Component {
     this.props = props;
     this.state = {
       name: '',
-      ingredients: []
+      ingredients: [],
+      isReady: true
     };
   }
 
@@ -23,6 +24,14 @@ class OrderForm extends Component {
 
   clearInputs = () => {
     this.setState({name: '', ingredients: []});
+  }
+
+  validateInputs = () => {
+    if (this.state.name && this.state.ingredients.length) {
+      this.setState({ isReady: false })
+    } else {
+      this.setState({ isReady: true })
+    }
   }
 
   render() {
@@ -49,7 +58,10 @@ class OrderForm extends Component {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button onClick={e => this.handleSubmit(e)}>
+        <button 
+          disabled={this.state.isReady} 
+          onClick={e => this.handleSubmit(e)}
+        >
           Submit Order
         </button>
       </form>
