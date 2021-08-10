@@ -23,7 +23,7 @@ describe('App user flows', () => {
       body: {
         orders: [
           {
-            id: 99,
+            id: 66,
             name: "Brandon",
             ingredients: [
               "carnitas",
@@ -93,6 +93,32 @@ describe('App user flows', () => {
       .should("have.length", "2")
   })
 
-  //should clear inputs after submitting
+  it("Should clear input after submitting", () => {
+    cy.get("input")
+      .type("Brandon")
+    cy.get("#0")
+      .click()
+    cy.get("[data-cy=submit]")
+      .click()
+    cy.get("input")
+      .should("have.value", "")
+  })
   
+  it("Should display correct information coming back from the POST", () => {
+    cy.get("#66")
+      .children("h3")
+      .contains("Brandon")
+    cy.get("#66")
+      .children(".ingredients-list")
+      .eq(0)
+      .should("contain.text", "beans")
+    cy.get("#66")
+      .children(".ingredients-list")
+      .eq(1)
+      .should("contain.text", "carnitas")
+    cy.get("#66")
+      .children(".ingredients-list")
+      .eq(2)
+      .should("contain.text", "steak")
+  })
 })
