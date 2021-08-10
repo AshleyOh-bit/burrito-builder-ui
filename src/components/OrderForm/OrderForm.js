@@ -73,9 +73,10 @@ class OrderForm extends Component {
         { ingredientButtons }
         </section>
 
-        <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
+        <p className="order-text">Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
         <button 
+          className="submit"
           disabled={this.state.isReady} 
           data-cy="submit"
           onClick={e => this.handleSubmit(e)}

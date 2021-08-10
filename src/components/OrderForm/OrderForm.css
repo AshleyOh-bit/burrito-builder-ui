@@ -27,3 +27,19 @@ input {
   height: 20px;
   border-radius: 4px;
 }
+
+.order-text {
+  font-weight: bold;
+}
+
+.submit {
+  background-color: gold;
+  border: 0;
+  height: 30px;
+  width: 150px;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
+}
