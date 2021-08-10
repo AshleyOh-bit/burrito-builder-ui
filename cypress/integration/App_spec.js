@@ -37,6 +37,12 @@ describe('App user flows', () => {
     cy.get("[data-cy=ingredients]")
       .should("have.length", "3")
       .should("be.visible")
+    cy.get("#Shelly")
+      .children("ul")
+      .eq(0)
+      .should("contain.text", "green beans")
+      .should("contain.text", "cheese")
+      .should("contain.text", "rice")
   })
 
   it("Should display an input for the user to type their name", () => {
