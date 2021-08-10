@@ -20,6 +20,14 @@ class OrderForm extends Component {
   handleNameChange = event => {
     const { name, value } = event.target
     this.setState({ [name]: value })
+    this.validateInputs()
+  }
+
+  handleIngredientChange = async event => {
+    event.preventDefault()
+    const { name, value } = event.target
+    await this.setState({ ingredients: [...this.state.ingredients, [name]] })
+    this.validateInputs()
   }
 
   clearInputs = () => {
