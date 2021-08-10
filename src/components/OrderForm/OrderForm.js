@@ -31,7 +31,7 @@ class OrderForm extends Component {
 
   handleIngredientChange = async event => {
     event.preventDefault()
-    const { name, value } = event.target
+    const { name } = event.target
     await this.setState({ ingredients: [...this.state.ingredients, [name]] }, () => {
       this.validateInputs()
     })

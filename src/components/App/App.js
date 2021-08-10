@@ -19,14 +19,16 @@ class App extends Component {
     .catch(err => this.setState({error: err.message}))
   }
 
-  addOrder = newOrder => {
-    this.setState({ orders: [...this.state.orders, newOrder] })
-    fetch('http://localhost:3001/api/v1/orders', {
+  addOrder = async newOrder => {
+    //this.setState({ orders: [...this.state.orders, newOrder] })
+    await fetch('http://localhost:3001/api/v1/orders', {
       method: "POST",
       body: JSON.stringify(newOrder),
       headers: { "Content-Type": "application/json" }
     })
     .then(response => response.json)
+    .then(this.setState({ orders: [...this.state.orders, newOrder] }))
+    // .then(data => this.setState({ orders: [...this.state.orders, data] }))
     .catch(err => this.setState({error: err.message}))
   }
 
@@ -38,7 +40,7 @@ class App extends Component {
           <OrderForm addOrder={this.addOrder}/>
         </header>
 
-        <Orders orders={this.state.orders}/>
+        {this.state.orders && <Orders orders={this.state.orders}/>}
       </main>
     );
   }
