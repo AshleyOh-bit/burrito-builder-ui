@@ -15,3 +15,8 @@
   background-repeat: no-repeat;
   background-image: url('../../burritos.jpg');
 }
+
+.orders-display {
+  display: flex;
+  flex-direction: column;
+}

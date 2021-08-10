@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./OrderForm.css"
 
 class OrderForm extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class OrderForm extends Component {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
     const ingredientButtons = possibleIngredients.map((ingredient, index) => {
       return (
-        <button key={ingredient} name={ingredient} data-cy="ingButton" id={index} onClick={e => this.handleIngredientChange(e)}>
+        <button key={ingredient} name={ingredient} data-cy="ingButton" className="ingButton" id={index} onClick={e => this.handleIngredientChange(e)}>
           {ingredient}
         </button>
       )
@@ -67,12 +68,15 @@ class OrderForm extends Component {
           value={this.state.name}
           onChange={e => this.handleNameChange(e)}
         />
-
+        <h3 className="form-header">Customize your burrito!</h3>
+        <section className="buttons-section">
         { ingredientButtons }
+        </section>
 
-        <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
+        <p className="order-text">Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
         <button 
+          className="submit"
           disabled={this.state.isReady} 
           data-cy="submit"
           onClick={e => this.handleSubmit(e)}

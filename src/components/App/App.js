@@ -37,8 +37,9 @@ class App extends Component {
           <h1>Burrito Builder</h1>
           <OrderForm addOrder={this.addOrder}/>
         </header>
-
+        <section className="orders-display">
         {this.state.orders && <Orders orders={this.state.orders}/>}
+        </section>
       </main>
     );
   }

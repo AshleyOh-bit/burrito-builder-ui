@@ -1,0 +1,45 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.ingButton {
+  margin: 5px;
+  background-color: lightseagreen;
+  border: 0;
+  border-radius: 4px;
+}
+
+.form-header {
+  font-style: italic;
+}
+
+input {
+  border: 1px solid lightpink;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.order-text {
+  font-weight: bold;
+}
+
+.submit {
+  background-color: gold;
+  border: 0;
+  height: 30px;
+  width: 150px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
