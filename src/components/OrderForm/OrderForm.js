@@ -61,6 +61,7 @@ class OrderForm extends Component {
 
     return (
       <form>
+        <h3 className="form-header">Customize your burrito!</h3>
         <input
           type='text'
           placeholder='Name'

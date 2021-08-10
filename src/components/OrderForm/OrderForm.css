@@ -17,3 +17,13 @@ form {
   border: 0;
   border-radius: 4px;
 }
+
+.form-header {
+  font-style: italic;
+}
+
+input {
+  border: 1px solid lightpink;
+  height: 20px;
+  border-radius: 4px;
+}
