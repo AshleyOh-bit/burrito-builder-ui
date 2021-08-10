@@ -19,6 +19,14 @@ describe('App user flows', () => {
     })
     cy.visit('http://localhost:3000/')
   })
+  it("Should display page title", () => {
+    cy.get("h1")
+      .contains("Burrito Builder")
+  })
 
+  it("Should display the information retrieved from the api", () => {
+    cy.get("[data-cy=orderCard]")
+      .should("have.length", "1")
+  })
 
 })
